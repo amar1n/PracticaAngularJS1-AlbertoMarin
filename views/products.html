@@ -1,0 +1,42 @@
+<div class="twelve columns">
+
+    <!-- Filtro de productos por nombre -->
+    <section class="four columns">
+        <label for="name-filter">Buscar productos por nombre...</label>
+        <input id="name-filter"
+               type="text"
+               placeholder="Ej. Dredd"
+               ng-model="$ctrl.nameFilter.name" size="28"
+               ng-change="$ctrl.updateFilterProductName()"
+        >
+    </section>
+
+    <!-- Filtro de productos por categoría -->
+    <section class="three columns">
+        <label for="cat-filter">Seleccione una categoría...</label>
+        <select id="cat-filter" ng-model="$ctrl.catFilter.name" ng-change="$ctrl.updateFilterCategory()">
+            <option ng-repeat="c in $ctrl.categories">{{ ::c.name }}</option>
+        </select>
+    </section>
+
+    <!-- Filtro de productos por distancia -->
+    <section class="five columns" ng-show="$ctrl.myPosition">
+        <label for="my-range">Buscar productos cerca de mi (en metros)...</label>
+        <input id="my-range" type="number" min="0" ng-model="$ctrl.myRange" ng-model-options="{ updateOn: 'blur'}" ng-change="$ctrl.updateFilterDistance()">
+    </section>
+
+    <!-- Lista de productos -->
+    <section class="twelve columns">
+        <table class="u-full-width">
+            <product-row
+                    ng-repeat="p in $ctrl.products
+                    | filter:$ctrl.nameFilter
+                    | ProductsByCategoryName:$ctrl.catFilter
+                    | ProductsByDistance:$ctrl.myRange:$ctrl.myPosition:$ctrl.users
+                    | orderBy:'name'"
+                    prod="p"
+                    on-product-details-click="$ctrl.productDetailsClicked(product)"></product-row>
+        </table>
+    </section>
+
+</div>

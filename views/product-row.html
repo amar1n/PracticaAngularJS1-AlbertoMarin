@@ -1,0 +1,20 @@
+<article>
+    <table class="u-full-width">
+        <tr class="row">
+            <td width="60">
+                <img
+                        ng-src="{{ ::getImagePath(prod.photos[0]) }}"
+                        width="60"
+                        height="60">
+            </td>
+            <td>
+                <div>{{ ::prod.name | ProductPrefix:prod.category }}</div>
+            </td>
+            <td width="1">
+                <!-- En el array que pasamos a la directiva ngLink podemos indicar parámetros de
+                ruta. Para ello, basta con pasar un JSON como segundo elemento. -->
+                <a href="" ng-click="notifyClick()">Details</a>
+            </td>
+        </tr>
+    </table>
+</article>

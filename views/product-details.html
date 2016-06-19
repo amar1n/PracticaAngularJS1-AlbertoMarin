@@ -1,0 +1,34 @@
+<article>
+    <div class="row">
+
+        <!-- Nombre del producto -->
+        <div class="eleven columns">
+            <h5>{{ $ctrl.product.name }}</h5>
+        </div>
+
+        <!-- Enlace para volver a la vista anterior -->
+        <div class="one column">
+            <a href="javascript:history.back();">Back</a>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <!-- Imagen del producto -->
+        <div class="five columns">
+            <img ng-src="{{ ::$ctrl.getImagePath($ctrl.product.photos[0]) }}"/>
+        </div>
+
+        <div class="seven columns">
+            <p><strong>Categoría</strong>: {{ ::$ctrl.product.category.name }}</p>
+
+            <p><strong>Descripción</strong>:</p>
+            <p ng-bind-html="$ctrl.productDescription"></p>
+
+            <p><strong>Fecha de publicación</strong>: {{ ::$ctrl.product.published_date | date:'longDate' }}</p>
+
+            <p><strong>Precio</strong>: {{ ::$ctrl.product.price | currency }}</p>
+        </div>
+
+    </div>
+</article>

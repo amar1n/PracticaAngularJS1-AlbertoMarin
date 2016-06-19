@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Establecemos la ruta base de la aplicación -->
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Whatapop</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="node_modules/skeleton-css/css/normalize.css">
+    <link rel="stylesheet" href="node_modules/skeleton-css/css/skeleton.css">
+    <!-- AngularJS -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
+    <!-- Documento de configuración del módulo -->
+    <script src="scripts/app.js"></script>
+    <!-- Componentes -->
+    <script src="scripts/components/product-details.js"></script>
+    <script src="scripts/components/products.js"></script>
+    <script src="scripts/components/root.js"></script>
+    <!-- Filtros -->
+    <script src="scripts/filters/product-prefix.js"></script>
+    <script src="scripts/filters/products-by-category-name.js"></script>
+    <script src="scripts/filters/products-by-distance.js"></script>
+    <!-- Servicios -->
+    <script src="scripts/services/product-service.js"></script>
+    <script src="scripts/services/category-service.js"></script>
+    <script src="scripts/services/my-geolocalization.js"></script>
+    <script src="scripts/services/user-service.js"></script>
+    <script src="scripts/services/my-local-web-storage.js"></script>
+    <!-- Directivas -->
+    <script src="scripts/directives/product-row.js"></script>
+    <!-- Values -->
+    <script src="scripts/values/properties.js"></script>
+    <!-- Third applications -->
+    <script src="node_modules/ng-haversine/ng-haversine.min.js"></script>
+</head>
+<body ng-app="whatapop">
+<root></root>
+</body>
+</html>
